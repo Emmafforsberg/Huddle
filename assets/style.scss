@@ -36,6 +36,8 @@ body {
 }
 header img {
   margin: $main_margin;
+  &:hover{
+  cursor: pointer;}
 }
 .wrapper {
   display: flex; /* makes it flexible when user resizes the viewport */
