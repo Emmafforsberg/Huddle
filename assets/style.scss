@@ -1,0 +1,155 @@
+$bg_color: #674bac;
+$main_margin: 1rem 5rem;
+$main_padding: 2rem;
+$button_color: #eadbf7;
+
+@mixin font_p {
+  font-family: "poppins", "Roboto", "Franklin Gothic Medium", Tahoma, sans-serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: #ffffff;
+  padding: 0.5rem;
+}
+@mixin button {
+  padding: 1.2rem 3rem;
+  color: $bg_color;
+  background: $button_color;
+  border-radius: 50px;
+  border: none;
+  margin: 1.6rem 0;
+  cursor: pointer;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: url(/images/bg-desktop.svg);
+  background-color: $bg_color;
+  padding: $main_padding;
+}
+header img {
+  margin: $main_margin;
+}
+.wrapper {
+  display: flex; /* makes it flexible when user resizes the viewport */
+  flex-direction: row; /* the direction is horizontal , not vertical(column) */
+  justify-content: center; /* aligns the div in the center */
+}
+.mockup {
+  margin: $main_margin;
+  width: 100%;
+}
+.content {
+  padding: $main_padding;
+  width: 100%;
+  margin-right: 5.5rem;
+  margin-top: 2rem;
+  @include font_p;
+}
+.content > h1 {
+  font-style: normal;
+  font-weight: 500;
+}
+button {
+  @include button;
+  font-size: 1rem;
+  &:hover {
+    border: 1px solid #eadbf7;
+    background: none;
+    color: white;
+  }
+}
+
+.social i {
+  color: white;
+  font-size: 1.6rem;
+  float: right;
+  padding: 1.5rem;
+  cursor: pointer;
+}
+.social i:hover {
+  color: $button_color;
+}
+footer {
+  p {
+    text-align: center;
+    margin: 2rem 0rem;
+    color: $button_color;
+  }
+  a {
+    color: #baa3f3;
+  }
+}
+/* Large screens */
+@media (max-width: 1200px) {
+  .mockup img,
+  .content {
+    width: 100%;
+  }
+}
+/* Laptops */
+@media (max-width: 992px) {
+  body {
+    background: url(/images/bg-mobile.svg) no-repeat;
+    background-size: cover;
+    background-color: $bg_color;
+    padding: 0;
+    margin: 0;
+  }
+
+  .mockup {
+    width: 100%;
+  }
+  .content {
+    width: 50%;
+    font-size: 0.9rem;
+    margin: 1rem;
+    display: flex-box;
+  }
+  .social {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
+}
+/* Tablets */
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+    justify-self: center;
+  }
+  header img {
+    width: 7rem;
+    margin-left: 2rem;
+  }
+  .mockup {
+    margin: 1rem auto;
+    width: 60%;
+  }
+  .content {
+    margin: 0 auto;
+    width: 60%;
+    font-size: 0.7rem;
+  }
+  button {
+    padding: 0.8rem 4rem;
+    margin: 2rem 1rem;
+    width: 80%;
+  }
+  .social i {
+    font-size: 1.4rem;
+  }
+}
+/* Mobile */
+@media (max-width: 576px) {
+  main {
+    margin: 0 auto;
+  }
+  .social {
+    margin-top: -1.5rem;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
