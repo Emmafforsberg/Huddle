@@ -12,6 +12,9 @@ body {
 header img {
   margin: 1rem 5rem;
 }
+header img:hover {
+  cursor: pointer;
+}
 
 .wrapper {
   display: -webkit-box;
